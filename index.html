@@ -29,18 +29,19 @@
 
   <!-- Header / Hero -->
   <header class="hero" role="banner">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <!-- LOGO (Image) -->
-        <a class="brand" href="#home" aria-label="Gulf LabExpedia Co.">
+        <a class="brand" href="#home" aria-label="Gulf LabExpedia Co. Home">
           <img class="brand-logo" src="assets/img/logo.png" alt="Gulf LabExpedia Logo">
         </a>
 
-        <button class="nav-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+        <button class="nav-toggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
         <div id="navLinks" class="nav-links">
           <a href="#about">About</a>
           <a href="#products">Products</a>
+          <a href="#gallery">Gallery</a>
           <a href="#quality">Quality</a>
           <a href="#vm">Vision & Mission</a>
           <a href="assets/docs/company-profile.pdf" target="_blank" rel="noopener">Company Profile</a>
@@ -158,8 +159,24 @@
       </div>
     </section>
 
+    <!-- Gallery (NEW) -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p class="sub">A look into our laboratory environment and product focus.</p>
+        </div>
+
+        <div class="image-grid">
+          <img src="assets/img/lab-1.jpg" alt="Laboratory chemicals and glassware" loading="lazy">
+          <img src="assets/img/lab-2.jpg" alt="Scientific laboratory analysis setup" loading="lazy">
+          <img src="assets/img/lab-3.jpg" alt="Laboratory testing and equipment" loading="lazy">
+        </div>
+      </div>
+    </section>
+
     <!-- Quality -->
-    <section id="quality" class="section">
+    <section id="quality" class="section alt">
       <div class="container">
         <div class="section-head">
           <h2>Quality & Support</h2>
@@ -189,7 +206,7 @@
     </section>
 
     <!-- Vision & Mission -->
-    <section id="vm" class="section alt">
+    <section id="vm" class="section">
       <div class="container">
         <div class="section-head">
           <h2>Vision & Mission</h2>
@@ -217,7 +234,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section alt">
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
@@ -278,11 +295,29 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
     function toggleMenu() {
-      const el = document.getElementById("navLinks");
-      el.classList.toggle("open");
+      const links = document.getElementById("navLinks");
+      const btn = document.querySelector(".nav-toggle");
+      links.classList.toggle("open");
+      const isOpen = links.classList.contains("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
+
+    // Close menu after clicking a link (mobile)
+    document.querySelectorAll('#navLinks a[href^="#"]').forEach(a => {
+      a.addEventListener("click", () => {
+        const links = document.getElementById("navLinks");
+        const btn = document.querySelector(".nav-toggle");
+        if (links.classList.contains("open")) {
+          links.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
   </script>
 </body>
 </html>
