@@ -1,120 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Gulf Lab Expedia Co.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chemicals, Microbiology Media, Laboratory & Scientific Supplies" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #1f2d3d;
-    }
-
-    header {
-      background: url('https://images.unsplash.com/photo-1581093588401-22a89f56d4c4');
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      position: relative;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0.8);
-    }
-
-    .hero {
-      position: relative;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      color: #0b3c5d;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      color: #0b3c5d;
-      margin-bottom: 20px;
-    }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .card {
-      width: 280px;
-      padding: 25px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      background: #fff;
-    }
-
-    footer {
-      background: #0b3c5d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="hero">
+<!-- ===== HEADER / HERO ===== -->
+<header class="hero">
+  <nav class="nav">
+    <div class="brand">Gulf Lab Expedia Co.</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero-content">
     <h1>Gulf Lab Expedia Co.</h1>
     <p>
       Chemicals, Microbiology Media, Laboratory & Scientific Supplies
     </p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="#contact">Request a Quote</a>
+      <a class="btn" href="#services">Our Services</a>
+    </div>
   </div>
 </header>
 
-<section>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
   <h2>About Us</h2>
-  <p>
+  <p class="lead">
     Gulf Lab Expedia Co. is a trusted supplier of laboratory chemicals,
     microbiology media, and scientific supplies, serving research,
     industrial, and educational sectors.
   </p>
 </section>
 
-<section>
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section alt">
   <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">Laboratory Chemicals</div>
-    <div class="card">Microbiology Media</div>
-    <div class="card">Scientific Equipment</div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Laboratory Chemicals</h3>
+      <p>High-quality chemicals with consistent and reliable sourcing.</p>
+    </div>
+
+    <div class="card">
+      <h3>Microbiology Media</h3>
+      <p>Culture media and consumables supporting microbiology workflows.</p>
+    </div>
+
+    <div class="card">
+      <h3>Scientific Supplies</h3>
+      <p>General laboratory supplies and scientific equipment.</p>
+    </div>
   </div>
 </section>
 
-<footer>
-  © 2026 Gulf Lab Expedia Co. All rights reserved.
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p class="lead">
+    Email:
+    <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a>
+  </p>
+  <p class="muted">Saudi Arabia</p>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  © <span id="year"></span> Gulf Lab Expedia Co. All rights reserved.
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
+
