@@ -4,90 +4,283 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Gulf Lab Expedia Co.</title>
-  <meta name="description" content="Chemicals, Microbiology Media, Laboratory & Scientific Supplies" />
+  <title>Gulf LabExpedia Co. | Laboratory Supplies & Chemicals</title>
+  <meta name="description" content="Gulf LabExpedia Co. (GLE) supplies high-quality laboratory chemicals, microbiology media, reagents, and scientific supplies for analytical, medical, and life science laboratories." />
 
-  <!-- CSS -->
+  <link rel="icon" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-
-<!-- ===== HEADER / HERO ===== -->
-<header class="hero">
-  <nav class="nav">
-    <div class="brand">Gulf Lab Expedia Co.</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <div class="hero-content">
-    <h1>Gulf Lab Expedia Co.</h1>
-    <p>
-      Chemicals, Microbiology Media, Laboratory & Scientific Supplies
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn primary" href="#contact">Request a Quote</a>
-      <a class="btn" href="#services">Our Services</a>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span>📞 +966 56 905 7446</span>
+        <span class="dot">•</span>
+        <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a>
+      </div>
+      <div class="topbar-right">
+        <a class="pill" href="#contact">Request a Quote</a>
+      </div>
     </div>
   </div>
-</header>
 
-<!-- ===== ABOUT ===== -->
-<section id="about" class="section">
-  <h2>About Us</h2>
-  <p class="lead">
-    Gulf Lab Expedia Co. is a trusted supplier of laboratory chemicals,
-    microbiology media, and scientific supplies, serving research,
-    industrial, and educational sectors.
-  </p>
-</section>
+  <!-- Header / Hero -->
+  <header class="hero" role="banner">
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#home" aria-label="Gulf LabExpedia Co.">
+          <span class="brand-mark">GLE</span>
+          <span class="brand-name">Gulf LabExpedia Co.</span>
+        </a>
 
-<!-- ===== SERVICES ===== -->
-<section id="services" class="section alt">
-  <h2>Our Services</h2>
+        <button class="nav-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Laboratory Chemicals</h3>
-      <p>High-quality chemicals with consistent and reliable sourcing.</p>
+        <div id="navLinks" class="nav-links">
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#quality">Quality</a>
+          <a href="#vm">Vision & Mission</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="home" class="container hero-content">
+      <div class="hero-card">
+        <div class="kicker">Chemicals • Microbiology Media • Laboratory & Scientific Supplies</div>
+        <h1>Trusted Laboratory Supplies for Analytical, Medical & Life Science Labs</h1>
+        <p class="lead">
+          Gulf LabExpedia Co. (GLE) provides high-quality laboratory supplies from well-known brands —
+          including chemicals, standards, microbiology media, reagents, and consumables — with responsive support.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Request a Quote</a>
+          <a class="btn" href="#products">Explore Products</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge">✔ Wide Range of Selections</div>
+          <div class="badge">✔ Responsive Support</div>
+          <div class="badge">✔ Customer Satisfaction Focus</div>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <div class="card">
-      <h3>Microbiology Media</h3>
-      <p>Culture media and consumables supporting microbiology workflows.</p>
+  <main>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>About Us</h2>
+          <p class="sub">
+            A comprehensive solution for laboratory supplies and chemicals — built on trust, quality, and support.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h3>Who We Are</h3>
+            <p>
+              Gulf LabExpedia Co. (GLE) serves analytical and life science sectors with premium laboratory supplies
+              from well-known brands. We supply chemicals and standards to a broad range of laboratories, and deliver
+              consumables and reagents to medical laboratories. Our product portfolio is continuously expanding.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>What We Commit To</h3>
+            <ul class="list">
+              <li>Comprehensive solutions that meet and exceed client expectations.</li>
+              <li>High responsiveness, customer satisfaction, and superior support.</li>
+              <li>Reliable supply with wide selections for laboratory needs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our Products</h2>
+          <p class="sub">Quality laboratory supplies and solutions for various laboratory applications.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Laboratory Chemicals & Reagents</h3>
+            <p>High-quality chemicals and reagents for reliable laboratory workflows.</p>
+          </div>
+
+          <div class="card">
+            <h3>Standard Solutions</h3>
+            <p>Standards supporting accurate calibration and analytical requirements.</p>
+          </div>
+
+          <div class="card">
+            <h3>Microbiology Media</h3>
+            <p>Microbiology media and complete solutions for diverse lab needs.</p>
+          </div>
+
+          <div class="card">
+            <h3>General Analytical Consumables</h3>
+            <p>Essential consumables for analytical and routine laboratory operations.</p>
+          </div>
+
+          <div class="card">
+            <h3>Tissue & Cell Culture</h3>
+            <p>Products for research and lab applications in tissue and cell culture.</p>
+          </div>
+
+          <div class="card">
+            <h3>Filtration & Biomonitoring</h3>
+            <p>Filtration and biomonitoring products supporting lab quality and safety.</p>
+          </div>
+
+          <div class="card">
+            <h3>Glassware & Plasticware</h3>
+            <p>Laboratory glassware, plasticware, and disposable materials.</p>
+          </div>
+
+          <div class="card">
+            <h3>Safety & Basic Equipment</h3>
+            <p>Safety lab products and essential laboratory equipment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section id="quality" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Quality & Support</h2>
+          <p class="sub">We focus on service excellence — from sourcing to after-sales support.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="panel">
+            <h3>Trusted Brands</h3>
+            <p>We supply laboratory products from well-known brands in the industry.</p>
+          </div>
+          <div class="panel">
+            <h3>Responsive Service</h3>
+            <p>Fast response, consistent follow-up, and dependable communication.</p>
+          </div>
+          <div class="panel">
+            <h3>Customer Satisfaction</h3>
+            <p>We are committed to guaranteeing customer satisfaction.</p>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>“GLE is committed to guaranteeing customer satisfaction.”</p>
+          <span>— Eng. Ammar Alghoul, Managing Director</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section id="vm" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vision & Mission</h2>
+          <p class="sub">Guiding principles that shape how we serve our clients.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h3>Vision</h3>
+            <p>
+              To be the preferred and trusted partner of choice to our clients by offering the best value
+              in the most effective way.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Mission</h3>
+            <p>
+              To provide clients with the most compelling experience in handling their requirements and
+              providing them with superior quality and wide range of selections.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="sub">Let us know what you need — we’ll respond promptly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Get in touch</h3>
+            <p class="contact-line"><strong>Phone:</strong> +966 56 905 7446</p>
+            <p class="contact-line"><strong>Email:</strong> <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a></p>
+            <p class="contact-line"><strong>Alt Email:</strong> <a href="mailto:info@gulfexpedia.com">info@gulfexpedia.com</a></p>
+
+            <div class="divider"></div>
+
+            <h3>Address</h3>
+            <p class="muted">
+              Summit Center for Business Administration,<br>
+              2nd Floor, Office 16, Al Aziziyah District,<br>
+              Jeddah, KSA
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Quick Request</h3>
+            <!-- Static site note: this is a mailto form -->
+            <form class="form" action="mailto:info@gulf-ec.com.sa" method="post" enctype="text/plain">
+              <label>
+                Your Name
+                <input name="name" placeholder="Full name" required>
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" placeholder="name@company.com" required>
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell us what you need (products / quantities / delivery city)"></textarea>
+              </label>
+              <button class="btn primary" type="submit">Send</button>
+              <p class="muted tiny">This form opens your email client to send the request.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Gulf LabExpedia Co.</strong><br>
+        <span class="muted">Chemicals, Microbiology Media, Laboratory & Scientific Supplies</span>
+      </div>
+      <div class="muted">
+        © <span id="year"></span> All rights reserved.
+      </div>
     </div>
+  </footer>
 
-    <div class="card">
-      <h3>Scientific Supplies</h3>
-      <p>General laboratory supplies and scientific equipment.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <p class="lead">
-    Email:
-    <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a>
-  </p>
-  <p class="muted">Saudi Arabia</p>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  © <span id="year"></span> Gulf Lab Expedia Co. All rights reserved.
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function toggleMenu() {
+      const el = document.getElementById("navLinks");
+      el.classList.toggle("open");
+    }
+  </script>
 </body>
 </html>
-
