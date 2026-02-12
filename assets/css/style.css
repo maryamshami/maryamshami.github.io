@@ -82,7 +82,7 @@ a:hover{text-decoration:underline}
   font-weight:700;
 }
 
-/* ✅ NEW: Company logo image in navbar */
+/* ✅ Company logo image in navbar */
 .brand-logo{
   height: 38px;
   width: auto;
@@ -375,8 +375,88 @@ textarea{ resize:vertical; }
   .nav-links.open{ display:flex; }
 }
 
-/* ✅ NEW: slightly smaller logo on very small screens */
+/* ✅ Existing: slightly smaller logo on very small screens */
 @media (max-width: 520px){
   .cards{ grid-template-columns: 1fr; }
   .brand-logo{ height: 32px; }
+}
+
+/* ===============================
+   ✅ Mobile Layout Fixes (NEW)
+   =============================== */
+@media (max-width: 768px){
+
+  /* Topbar stacks nicely */
+  .topbar-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+  .topbar-right{
+    width:100%;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .pill{
+    font-size:13px;
+    padding:6px 10px;
+  }
+
+  /* Navbar wrap and full-width menu */
+  .nav-inner{
+    flex-wrap:wrap;
+  }
+  .brand{
+    flex:1;
+    min-width: 180px;
+  }
+  .nav-toggle{
+    margin-left:auto;
+  }
+  .nav-links{
+    width:100%;
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:14px 0;
+  }
+  .nav-links a{
+    width:100%;
+    padding:8px 0;
+    font-size:15px;
+  }
+
+  /* Hero better spacing */
+  .hero{
+    min-height:auto;
+  }
+  .hero-content{
+    padding:28px 0 32px;
+  }
+  .hero-card{
+    padding:20px;
+  }
+  .hero-card h1{
+    font-size:28px;
+    line-height:1.25;
+  }
+  .lead{
+    font-size:15px;
+  }
+
+  /* Buttons stacked */
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .hero-actions .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  /* Badges stacked */
+  .hero-badges{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
