@@ -1,29 +1,45 @@
 :root{
+  /* ✅ Professional palette (Navy + Gold) */
   --bg:#ffffff;
-  --alt:#f6f8fb;
-  --ink:#0f1f2e;
-  --muted:#586a7c;
-  --brand:#0b3c5d;
-  --brand2:#0f5b7d;
+  --alt:#f7f9fc;
+  --ink:#0e1a24;
+  --muted:#5a6a7a;
+
+  --brand:#082a40;      /* deep navy */
+  --brand2:#0d4b73;     /* blue accent */
+  --accent:#b59a5a;     /* elegant gold */
+  --accent2:#d2b673;    /* lighter gold */
+
   --line:#e6edf5;
-  --shadow: 0 12px 30px rgba(15, 31, 46, .10);
+  --shadow: 0 14px 34px rgba(8, 42, 64, .14);
+  --shadow2: 0 10px 24px rgba(14, 26, 36, .10);
+  --radius:18px;
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
-a{color:var(--brand);text-decoration:none}
+html,body{
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+}
+a{color:var(--brand2);text-decoration:none}
 a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
 
 .container{
-  max-width:1100px;
+  max-width:1120px;
   margin:0 auto;
   padding:0 18px;
 }
 
-/* Topbar */
+/* =========================
+   Topbar
+   ========================= */
 .topbar{
-  background: #0a2f48;
-  color:#d9e6f0;
+  background: linear-gradient(90deg, var(--brand), #061d2d);
+  color:#dbe7f0;
   font-size:14px;
 }
 .topbar-inner{
@@ -39,32 +55,64 @@ a:hover{text-decoration:underline}
   align-items:center;
   gap:10px;
 }
-.topbar a{color:#d9e6f0}
+.topbar a{color:#dbe7f0}
 .dot{opacity:.6}
+
 .pill{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:8px 12px;
   border-radius:999px;
-  background: rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  color:#eaf2f7;
+  transition: transform .15s ease, filter .15s ease, background .15s ease;
 }
-.pill:hover{ text-decoration:none; filter:brightness(1.05); }
+.pill:hover{
+  text-decoration:none;
+  transform: translateY(-1px);
+  filter:brightness(1.06);
+}
 
-/* Hero */
+/* ✅ If you added language toggle button in HTML */
+.lang-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  transition: transform .15s ease, filter .15s ease;
+}
+.lang-toggle:hover{
+  transform: translateY(-1px);
+  filter:brightness(1.06);
+}
+
+/* =========================
+   Hero
+   ========================= */
 .hero{
   min-height:78vh;
   background:
-    linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.75)),
+    linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.76)),
     url("../img/hero.jpg") center/cover no-repeat;
   border-bottom:1px solid var(--line);
 }
 
-/* Sticky nav */
+/* =========================
+   Sticky nav
+   ========================= */
 .nav{
   position:sticky;
   top:0;
   backdrop-filter: blur(10px);
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.78);
   border-bottom:1px solid var(--line);
   z-index:50;
 }
@@ -85,12 +133,12 @@ a:hover{text-decoration:underline}
 
 /* Company logo image in navbar */
 .brand-logo{
-  height: 38px;
+  height: 40px;
   width: auto;
   display:block;
 }
 
-/* (Old fallback styles - harmless if you still have them in HTML somewhere) */
+/* (Old fallback styles - harmless if still used) */
 .brand-mark{
   display:inline-flex;
   align-items:center;
@@ -110,41 +158,69 @@ a:hover{text-decoration:underline}
 }
 .nav-links a{
   color:var(--ink);
-  font-weight:600;
+  font-weight:700;
   font-size:14px;
+  padding:8px 10px;
+  border-radius:12px;
+  transition: background .15s ease, color .15s ease;
 }
+.nav-links a:hover{
+  text-decoration:none;
+  background: rgba(13, 75, 115, .08);
+  color: var(--brand2);
+}
+
 .nav-toggle{
   display:none;
   border:1px solid var(--line);
   background:#fff;
-  border-radius:10px;
+  border-radius:12px;
   padding:8px 10px;
 }
 
+/* =========================
+   Hero content
+   ========================= */
 .hero-content{
   padding:56px 0 48px;
   display:flex;
   justify-content:flex-start;
 }
+
 .hero-card{
-  max-width:720px;
-  background: rgba(255,255,255,.88);
+  max-width:760px;
+  background: rgba(255,255,255,.90);
   border:1px solid var(--line);
-  border-radius:18px;
-  padding:26px;
+  border-radius:var(--radius);
+  padding:28px;
   box-shadow: var(--shadow);
+  position:relative;
+  overflow:hidden;
 }
+
+/* subtle gold glow */
+.hero-card::before{
+  content:"";
+  position:absolute;
+  inset:-60px -120px auto auto;
+  width:240px;height:240px;
+  background: radial-gradient(circle at 30% 30%, rgba(181,154,90,.35), rgba(181,154,90,0));
+  transform: rotate(18deg);
+  pointer-events:none;
+}
+
 .kicker{
   display:inline-block;
   font-size:12px;
-  font-weight:700;
+  font-weight:800;
   color: var(--brand);
-  background: rgba(11,60,93,.08);
-  border: 1px solid rgba(11,60,93,.14);
+  background: rgba(181,154,90,.12);
+  border: 1px solid rgba(181,154,90,.25);
   padding:8px 10px;
   border-radius:999px;
   margin-bottom:14px;
 }
+
 .hero-card h1{
   margin:0 0 12px;
   font-size:44px;
@@ -164,22 +240,36 @@ a:hover{text-decoration:underline}
   margin: 14px 0 18px;
 }
 
+/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   padding:12px 16px;
-  border-radius:12px;
+  border-radius:14px;
   border:1px solid var(--line);
   background:#fff;
   color:var(--ink);
-  font-weight:700;
+  font-weight:800;
+  box-shadow: 0 6px 16px rgba(14,26,36,.06);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
 }
-.btn:hover{ text-decoration:none; filter:brightness(.98); }
+.btn:hover{
+  text-decoration:none;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow2);
+}
 .btn.primary{
-  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  background: linear-gradient(135deg, var(--brand2), var(--brand));
   border-color: transparent;
   color:#fff;
+}
+
+/* optional: if you used .btn.ghost in HTML */
+.btn.ghost{
+  border-color: rgba(13, 75, 115, .22);
+  background: rgba(13, 75, 115, .06);
+  color: var(--brand2);
 }
 
 .hero-badges{
@@ -196,7 +286,9 @@ a:hover{text-decoration:underline}
   border-radius:999px;
 }
 
-/* Sections */
+/* =========================
+   Sections
+   ========================= */
 .section{
   padding:64px 0;
 }
@@ -217,7 +309,7 @@ a:hover{text-decoration:underline}
 }
 .sub{
   margin:0 auto;
-  max-width:860px;
+  max-width:880px;
   color: var(--muted);
   font-size:16px;
   line-height:1.7;
@@ -239,9 +331,14 @@ a:hover{text-decoration:underline}
 .panel{
   background:#fff;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:var(--radius);
   padding:18px;
-  box-shadow: 0 6px 16px rgba(15, 31, 46, .06);
+  box-shadow: 0 8px 20px rgba(14, 26, 36, .07);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.panel:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
 }
 .panel h3{
   margin:0 0 10px;
@@ -261,6 +358,9 @@ a:hover{text-decoration:underline}
 }
 .list li{ margin: 6px 0; }
 
+/* =========================
+   Cards
+   ========================= */
 .cards{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
@@ -270,12 +370,29 @@ a:hover{text-decoration:underline}
 .card{
   background:#fff;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:var(--radius);
   padding:16px;
-  box-shadow: 0 6px 16px rgba(15, 31, 46, .06);
+  box-shadow: 0 8px 20px rgba(14, 26, 36, .07);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0 auto auto 0;
+  width:100%;
+  height:4px;
+  background: linear-gradient(90deg, var(--accent), var(--brand2));
+  opacity:.9;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+  border-color: rgba(13, 75, 115, .25);
 }
 .card h3{
-  margin:0 0 8px;
+  margin:8px 0 8px;
   color: var(--ink);
   font-size:16px;
 }
@@ -286,7 +403,9 @@ a:hover{text-decoration:underline}
   font-size:14px;
 }
 
-/* ✅ NEW: Gallery */
+/* =========================
+   Gallery (your same structure)
+   ========================= */
 .image-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -297,36 +416,41 @@ a:hover{text-decoration:underline}
   width:100%;
   height:240px;
   object-fit:cover;
-  border-radius:16px;
+  border-radius:var(--radius);
   border:1px solid var(--line);
-  box-shadow: 0 6px 16px rgba(15, 31, 46, .08);
-  transition: transform .2s ease, filter .2s ease;
+  box-shadow: 0 10px 22px rgba(14, 26, 36, .08);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
 }
 .image-grid img:hover{
   transform: translateY(-2px);
+  box-shadow: var(--shadow2);
   filter: brightness(1.02);
 }
 
-/* Quote */
+/* =========================
+   Quote
+   ========================= */
 .quote{
   margin-top:18px;
-  border:1px dashed rgba(11,60,93,.35);
-  background: rgba(11,60,93,.05);
-  border-radius:16px;
+  border:1px dashed rgba(181,154,90,.55);
+  background: rgba(181,154,90,.08);
+  border-radius:var(--radius);
   padding:16px;
   text-align:center;
 }
 .quote p{
   margin:0 0 6px;
   color: var(--ink);
-  font-weight:700;
+  font-weight:800;
 }
 .quote span{
   color: var(--muted);
   font-size:14px;
 }
 
-/* Contact */
+/* =========================
+   Contact
+   ========================= */
 .contact-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -334,36 +458,49 @@ a:hover{text-decoration:underline}
   margin-top:18px;
 }
 .contact-line{ margin: 8px 0; }
+
 .divider{
   height:1px;
   background: var(--line);
   margin:14px 0;
 }
+
 .form{
   display:flex;
   flex-direction:column;
   gap:12px;
 }
+
 label{
   display:flex;
   flex-direction:column;
   gap:6px;
-  font-weight:700;
+  font-weight:800;
   color: var(--ink);
   font-size:14px;
 }
+
 input, textarea{
   border:1px solid var(--line);
-  border-radius:12px;
+  border-radius:14px;
   padding:12px 12px;
   font: inherit;
+  background:#fff;
+  outline:none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+input:focus, textarea:focus{
+  border-color: rgba(13,75,115,.45);
+  box-shadow: 0 0 0 4px rgba(13,75,115,.10);
 }
 textarea{ resize:vertical; }
 .tiny{ font-size:12px; }
 
-/* Footer */
+/* =========================
+   Footer
+   ========================= */
 .footer{
-  background:#0a2f48;
+  background: linear-gradient(90deg, #061d2d, var(--brand));
   color:#e6f0f7;
   padding:22px 0;
 }
@@ -373,9 +510,11 @@ textarea{ resize:vertical; }
   justify-content:space-between;
   gap:12px;
 }
-.muted{ color: rgba(230,240,247,.75); }
+.muted{ color: rgba(230,240,247,.78); }
 
-/* Responsive */
+/* =========================
+   Responsive
+   ========================= */
 @media (max-width: 980px){
   .cards{ grid-template-columns: repeat(2, 1fr); }
   .grid-3{ grid-template-columns: 1fr; }
@@ -402,13 +541,13 @@ textarea{ resize:vertical; }
 /* Existing: slightly smaller logo on very small screens */
 @media (max-width: 520px){
   .cards{ grid-template-columns: 1fr; }
-  .brand-logo{ height: 32px; }
+  .brand-logo{ height: 34px; }
   .image-grid{ grid-template-columns: 1fr; }
   .image-grid img{ height:210px; }
 }
 
 /* ===============================
-   ✅ Mobile Layout Fixes (NEW)
+   ✅ Mobile Layout Fixes (kept + improved)
    =============================== */
 @media (max-width: 768px){
 
@@ -416,7 +555,7 @@ textarea{ resize:vertical; }
   .topbar-inner{
     flex-direction:column;
     align-items:flex-start;
-    gap:6px;
+    gap:8px;
   }
   .topbar-right{
     width:100%;
@@ -440,6 +579,7 @@ textarea{ resize:vertical; }
   .nav-toggle{
     margin-left:auto;
   }
+
   .nav-links{
     width:100%;
     background:#fff;
@@ -448,7 +588,7 @@ textarea{ resize:vertical; }
   }
   .nav-links a{
     width:100%;
-    padding:8px 0;
+    padding:10px 10px;
     font-size:15px;
   }
 
@@ -485,4 +625,19 @@ textarea{ resize:vertical; }
     flex-direction:column;
     align-items:flex-start;
   }
+}
+
+/* =========================
+   RTL helpers (for Arabic)
+   ========================= */
+html[dir="rtl"] .list{
+  padding-left:0;
+  padding-right:18px;
+}
+html[dir="rtl"] .topbar-left{
+  direction: rtl;
+}
+html[dir="rtl"] .topbar-left a{
+  direction:ltr;
+  unicode-bidi: plaintext;
 }
