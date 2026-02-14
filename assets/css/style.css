@@ -75,7 +75,7 @@ img{max-width:100%;display:block}
   filter:brightness(1.06);
 }
 
-/* ✅ If you added language toggle button in HTML */
+/* ✅ Language toggle button */
 .lang-toggle{
   display:inline-flex;
   align-items:center;
@@ -404,7 +404,7 @@ img{max-width:100%;display:block}
 }
 
 /* =========================
-   Gallery (your same structure)
+   Gallery
    ========================= */
 .image-grid{
   display:grid;
@@ -446,6 +446,28 @@ img{max-width:100%;display:block}
 .quote span{
   color: var(--muted);
   font-size:14px;
+}
+
+/* =========================
+   Location / Map (✅ NEW - required for your HTML)
+   ========================= */
+.map-box{
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+  background:#fff;
+}
+.map-box iframe{
+  width:100%;
+  height:420px;
+  border:0;
+  display:block;
+}
+.location-actions{
+  margin-top:14px;
+  display:flex;
+  justify-content:center;
 }
 
 /* =========================
@@ -625,19 +647,52 @@ textarea{ resize:vertical; }
     flex-direction:column;
     align-items:flex-start;
   }
+
+  /* Map height on mobile */
+  .map-box iframe{
+    height:260px;
+  }
 }
 
 /* =========================
    RTL helpers (for Arabic)
    ========================= */
+html[dir="rtl"] body{
+  direction: rtl;
+  text-align: right;
+}
+
+/* Lists */
 html[dir="rtl"] .list{
   padding-left:0;
   padding-right:18px;
+}
+
+/* Topbar layout for RTL */
+html[dir="rtl"] .topbar-inner{
+  flex-direction: row-reverse;
 }
 html[dir="rtl"] .topbar-left{
   direction: rtl;
 }
 html[dir="rtl"] .topbar-left a{
+  direction:ltr;
+  unicode-bidi: plaintext;
+}
+html[dir="rtl"] .topbar-right{
+  direction: rtl;
+}
+
+/* Nav links order nicer in RTL */
+html[dir="rtl"] .nav-inner{
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .nav-links{
+  direction: rtl;
+}
+
+/* Keep phone/email left-to-right even in Arabic */
+html[dir="rtl"] [dir="ltr"]{
   direction:ltr;
   unicode-bidi: plaintext;
 }
