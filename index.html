@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -16,19 +16,27 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
-        <span>📞 +966 56 905 7446</span>
+        <span>📞 <span dir="ltr">+966 56 905 7446</span></span>
         <span class="dot">•</span>
         <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a>
       </div>
+
       <div class="topbar-right">
-        <a class="pill" href="assets/docs/company-profile.pdf" target="_blank" rel="noopener">Company Profile</a>
-        <a class="pill" href="#contact">Request a Quote</a>
+        <a class="pill" href="assets/docs/company-profile.pdf" target="_blank" rel="noopener" data-i18n="companyProfile">
+          Company Profile
+        </a>
+        <a class="pill" href="#contact" data-i18n="requestQuote">Request a Quote</a>
+
+        <!-- Language Toggle -->
+        <button class="lang-toggle" type="button" id="langBtn" aria-label="Switch language">
+          AR
+        </button>
       </div>
     </div>
   </div>
 
   <!-- Header / Hero -->
-  <header class="hero" role="banner">
+  <header class="hero" role="banner" id="home">
     <nav class="nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <!-- LOGO (Image) -->
@@ -39,36 +47,40 @@
         <button class="nav-toggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
         <div id="navLinks" class="nav-links">
-          <a href="#about">About</a>
-          <a href="#products">Products</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#quality">Quality</a>
-          <a href="#vm">Vision & Mission</a>
-          <a href="assets/docs/company-profile.pdf" target="_blank" rel="noopener">Company Profile</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#products" data-i18n="navProducts">Products</a>
+          <a href="#gallery" data-i18n="navGallery">Gallery</a>
+          <a href="#quality" data-i18n="navQuality">Quality</a>
+          <a href="#vm" data-i18n="navVM">Vision & Mission</a>
+          <a href="assets/docs/company-profile.pdf" target="_blank" rel="noopener" data-i18n="companyProfile">Company Profile</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
         </div>
       </div>
     </nav>
 
-    <div id="home" class="container hero-content">
+    <div class="container hero-content">
       <div class="hero-card">
-        <div class="kicker">Chemicals • Microbiology Media • Laboratory & Scientific Supplies</div>
-        <h1>Trusted Laboratory Supplies for Analytical, Medical & Life Science Labs</h1>
-        <p class="lead">
+        <div class="kicker" data-i18n="heroKicker">Chemicals • Microbiology Media • Laboratory & Scientific Supplies</div>
+
+        <h1 data-i18n="heroTitle">Trusted Laboratory Supplies for Analytical, Medical & Life Science Labs</h1>
+
+        <p class="lead" data-i18n="heroLead">
           Gulf LabExpedia Co. (GLE) provides high-quality laboratory supplies from well-known brands —
           including chemicals, standards, microbiology media, reagents, and consumables — with responsive support.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#contact">Request a Quote</a>
-          <a class="btn" href="#products">Explore Products</a>
-          <a class="btn" href="assets/docs/company-profile.pdf" target="_blank" rel="noopener">View Company Profile (PDF)</a>
+          <a class="btn primary" href="#contact" data-i18n="requestQuote">Request a Quote</a>
+          <a class="btn" href="#products" data-i18n="exploreProducts">Explore Products</a>
+          <a class="btn ghost" href="assets/docs/company-profile.pdf" target="_blank" rel="noopener" data-i18n="viewCompanyProfile">
+            View Company Profile (PDF)
+          </a>
         </div>
 
         <div class="hero-badges">
-          <div class="badge">✔ Wide Range of Selections</div>
-          <div class="badge">✔ Responsive Support</div>
-          <div class="badge">✔ Customer Satisfaction Focus</div>
+          <div class="badge" data-i18n="badge1">✔ Wide Range of Selections</div>
+          <div class="badge" data-i18n="badge2">✔ Responsive Support</div>
+          <div class="badge" data-i18n="badge3">✔ Customer Satisfaction Focus</div>
         </div>
       </div>
     </div>
@@ -79,16 +91,16 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>About Us</h2>
-          <p class="sub">
+          <h2 data-i18n="aboutTitle">About Us</h2>
+          <p class="sub" data-i18n="aboutSub">
             A comprehensive solution for laboratory supplies and chemicals — built on trust, quality, and support.
           </p>
         </div>
 
         <div class="grid-2">
           <div class="panel">
-            <h3>Who We Are</h3>
-            <p>
+            <h3 data-i18n="whoTitle">Who We Are</h3>
+            <p data-i18n="whoText">
               Gulf LabExpedia Co. (GLE) serves analytical and life science sectors with premium laboratory supplies
               from well-known brands. We supply chemicals and standards to a broad range of laboratories, and deliver
               consumables and reagents to medical laboratories. Our product portfolio is continuously expanding.
@@ -96,11 +108,11 @@
           </div>
 
           <div class="panel">
-            <h3>What We Commit To</h3>
+            <h3 data-i18n="commitTitle">What We Commit To</h3>
             <ul class="list">
-              <li>Comprehensive solutions that meet and exceed client expectations.</li>
-              <li>High responsiveness, customer satisfaction, and superior support.</li>
-              <li>Reliable supply with wide selections for laboratory needs.</li>
+              <li data-i18n="commit1">Comprehensive solutions that meet and exceed client expectations.</li>
+              <li data-i18n="commit2">High responsiveness, customer satisfaction, and superior support.</li>
+              <li data-i18n="commit3">Reliable supply with wide selections for laboratory needs.</li>
             </ul>
           </div>
         </div>
@@ -111,66 +123,72 @@
     <section id="products" class="section alt">
       <div class="container">
         <div class="section-head">
-          <h2>Our Products</h2>
-          <p class="sub">Quality laboratory supplies and solutions for various laboratory applications.</p>
+          <h2 data-i18n="productsTitle">Our Products</h2>
+          <p class="sub" data-i18n="productsSub">Quality laboratory supplies and solutions for various laboratory applications.</p>
         </div>
 
         <div class="cards">
           <div class="card">
-            <h3>Laboratory Chemicals & Reagents</h3>
-            <p>High-quality chemicals and reagents for reliable laboratory workflows.</p>
+            <h3 data-i18n="p1Title">Laboratory Chemicals & Reagents</h3>
+            <p data-i18n="p1Text">High-quality chemicals and reagents for reliable laboratory workflows.</p>
           </div>
 
           <div class="card">
-            <h3>Standard Solutions</h3>
-            <p>Standards supporting accurate calibration and analytical requirements.</p>
+            <h3 data-i18n="p2Title">Standard Solutions</h3>
+            <p data-i18n="p2Text">Standards supporting accurate calibration and analytical requirements.</p>
           </div>
 
           <div class="card">
-            <h3>Microbiology Media</h3>
-            <p>Microbiology media and complete solutions for diverse lab needs.</p>
+            <h3 data-i18n="p3Title">Microbiology Media</h3>
+            <p data-i18n="p3Text">Microbiology media and complete solutions for diverse lab needs.</p>
           </div>
 
           <div class="card">
-            <h3>General Analytical Consumables</h3>
-            <p>Essential consumables for analytical and routine laboratory operations.</p>
+            <h3 data-i18n="p4Title">General Analytical Consumables</h3>
+            <p data-i18n="p4Text">Essential consumables for analytical and routine laboratory operations.</p>
           </div>
 
           <div class="card">
-            <h3>Tissue & Cell Culture</h3>
-            <p>Products for research and lab applications in tissue and cell culture.</p>
+            <h3 data-i18n="p5Title">Tissue & Cell Culture</h3>
+            <p data-i18n="p5Text">Products for research and lab applications in tissue and cell culture.</p>
           </div>
 
           <div class="card">
-            <h3>Filtration & Biomonitoring</h3>
-            <p>Filtration and biomonitoring products supporting lab quality and safety.</p>
+            <h3 data-i18n="p6Title">Filtration & Biomonitoring</h3>
+            <p data-i18n="p6Text">Filtration and biomonitoring products supporting lab quality and safety.</p>
           </div>
 
           <div class="card">
-            <h3>Glassware & Plasticware</h3>
-            <p>Laboratory glassware, plasticware, and disposable materials.</p>
+            <h3 data-i18n="p7Title">Glassware & Plasticware</h3>
+            <p data-i18n="p7Text">Laboratory glassware, plasticware, and disposable materials.</p>
           </div>
 
           <div class="card">
-            <h3>Safety & Basic Equipment</h3>
-            <p>Safety lab products and essential laboratory equipment.</p>
+            <h3 data-i18n="p8Title">Safety & Basic Equipment</h3>
+            <p data-i18n="p8Text">Safety lab products and essential laboratory equipment.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery (NEW) -->
+    <!-- Gallery -->
     <section id="gallery" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Gallery</h2>
-          <p class="sub">A look into our laboratory environment and product focus.</p>
+          <h2 data-i18n="galleryTitle">Gallery</h2>
+          <p class="sub" data-i18n="gallerySub">A look into our laboratory environment and product focus.</p>
         </div>
 
         <div class="image-grid">
-          <img src="assets/img/lab-1.jpg" alt="Laboratory chemicals and glassware" loading="lazy">
-          <img src="assets/img/lab-2.jpg" alt="Scientific laboratory analysis setup" loading="lazy">
-          <img src="assets/img/lab-3.jpg" alt="Laboratory testing and equipment" loading="lazy">
+          <figure class="img-card">
+            <img src="assets/img/lab-1.jpg" alt="Laboratory chemicals and glassware" loading="lazy">
+          </figure>
+          <figure class="img-card">
+            <img src="assets/img/lab-2.jpg" alt="Scientific laboratory analysis setup" loading="lazy">
+          </figure>
+          <figure class="img-card">
+            <img src="assets/img/lab-3.jpg" alt="Laboratory testing and equipment" loading="lazy">
+          </figure>
         </div>
       </div>
     </section>
@@ -179,28 +197,28 @@
     <section id="quality" class="section alt">
       <div class="container">
         <div class="section-head">
-          <h2>Quality & Support</h2>
-          <p class="sub">We focus on service excellence — from sourcing to after-sales support.</p>
+          <h2 data-i18n="qualityTitle">Quality & Support</h2>
+          <p class="sub" data-i18n="qualitySub">We focus on service excellence — from sourcing to after-sales support.</p>
         </div>
 
         <div class="grid-3">
           <div class="panel">
-            <h3>Trusted Brands</h3>
-            <p>We supply laboratory products from well-known brands in the industry.</p>
+            <h3 data-i18n="q1Title">Trusted Brands</h3>
+            <p data-i18n="q1Text">We supply laboratory products from well-known brands in the industry.</p>
           </div>
           <div class="panel">
-            <h3>Responsive Service</h3>
-            <p>Fast response, consistent follow-up, and dependable communication.</p>
+            <h3 data-i18n="q2Title">Responsive Service</h3>
+            <p data-i18n="q2Text">Fast response, consistent follow-up, and dependable communication.</p>
           </div>
           <div class="panel">
-            <h3>Customer Satisfaction</h3>
-            <p>We are committed to guaranteeing customer satisfaction.</p>
+            <h3 data-i18n="q3Title">Customer Satisfaction</h3>
+            <p data-i18n="q3Text">We are committed to guaranteeing customer satisfaction.</p>
           </div>
         </div>
 
         <div class="quote">
-          <p>“GLE is committed to guaranteeing customer satisfaction.”</p>
-          <span>— Eng. Ammar Alghoul, Managing Director</span>
+          <p data-i18n="quoteText">“GLE is committed to guaranteeing customer satisfaction.”</p>
+          <span data-i18n="quoteBy">— Eng. Ammar Alghoul, Managing Director</span>
         </div>
       </div>
     </section>
@@ -209,22 +227,22 @@
     <section id="vm" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Vision & Mission</h2>
-          <p class="sub">Guiding principles that shape how we serve our clients.</p>
+          <h2 data-i18n="vmTitle">Vision & Mission</h2>
+          <p class="sub" data-i18n="vmSub">Guiding principles that shape how we serve our clients.</p>
         </div>
 
         <div class="grid-2">
           <div class="panel">
-            <h3>Vision</h3>
-            <p>
+            <h3 data-i18n="visionTitle">Vision</h3>
+            <p data-i18n="visionText">
               To be the preferred and trusted partner of choice to our clients by offering the best value
               in the most effective way.
             </p>
           </div>
 
           <div class="panel">
-            <h3>Mission</h3>
-            <p>
+            <h3 data-i18n="missionTitle">Mission</h3>
+            <p data-i18n="missionText">
               To provide clients with the most compelling experience in handling their requirements and
               providing them with superior quality and wide range of selections.
             </p>
@@ -237,21 +255,21 @@
     <section id="contact" class="section alt">
       <div class="container">
         <div class="section-head">
-          <h2>Contact</h2>
-          <p class="sub">Let us know what you need — we’ll respond promptly.</p>
+          <h2 data-i18n="contactTitle">Contact</h2>
+          <p class="sub" data-i18n="contactSub">Let us know what you need — we’ll respond promptly.</p>
         </div>
 
         <div class="contact-grid">
           <div class="panel">
-            <h3>Get in touch</h3>
-            <p class="contact-line"><strong>Phone:</strong> +966 56 905 7446</p>
-            <p class="contact-line"><strong>Email:</strong> <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a></p>
-            <p class="contact-line"><strong>Alt Email:</strong> <a href="mailto:info@gulfexpedia.com">info@gulfexpedia.com</a></p>
+            <h3 data-i18n="touchTitle">Get in touch</h3>
+            <p class="contact-line"><strong data-i18n="phoneLabel">Phone:</strong> <span dir="ltr">+966 56 905 7446</span></p>
+            <p class="contact-line"><strong data-i18n="emailLabel">Email:</strong> <a href="mailto:info@gulf-ec.com.sa">info@gulf-ec.com.sa</a></p>
+            <p class="contact-line"><strong data-i18n="altEmailLabel">Alt Email:</strong> <a href="mailto:info@gulfexpedia.com">info@gulfexpedia.com</a></p>
 
             <div class="divider"></div>
 
-            <h3>Address</h3>
-            <p class="muted">
+            <h3 data-i18n="addressTitle">Address</h3>
+            <p class="muted" data-i18n="addressText">
               Summit Center for Business Administration,<br>
               2nd Floor, Office 16, Al Aziziyah District,<br>
               Jeddah, KSA
@@ -259,22 +277,25 @@
           </div>
 
           <div class="panel">
-            <h3>Quick Request</h3>
+            <h3 data-i18n="quickTitle">Quick Request</h3>
             <form class="form" action="mailto:info@gulf-ec.com.sa" method="post" enctype="text/plain">
               <label>
-                Your Name
-                <input name="name" placeholder="Full name" required>
+                <span data-i18n="nameLabel">Your Name</span>
+                <input name="name" data-i18n-placeholder="namePH" placeholder="Full name" required>
               </label>
+
               <label>
-                Email
-                <input name="email" type="email" placeholder="name@company.com" required>
+                <span data-i18n="emailFieldLabel">Email</span>
+                <input name="email" type="email" data-i18n-placeholder="emailPH" placeholder="name@company.com" required>
               </label>
+
               <label>
-                Message
-                <textarea name="message" rows="5" placeholder="Tell us what you need (products / quantities / delivery city)"></textarea>
+                <span data-i18n="msgLabel">Message</span>
+                <textarea name="message" rows="5" data-i18n-placeholder="msgPH" placeholder="Tell us what you need (products / quantities / delivery city)"></textarea>
               </label>
-              <button class="btn primary" type="submit">Send</button>
-              <p class="muted tiny">This form opens your email client to send the request.</p>
+
+              <button class="btn primary" type="submit" data-i18n="sendBtn">Send</button>
+              <p class="muted tiny" data-i18n="formNote">This form opens your email client to send the request.</p>
             </form>
           </div>
         </div>
@@ -286,11 +307,9 @@
     <div class="container footer-inner">
       <div>
         <strong>Gulf LabExpedia Co.</strong><br>
-        <span class="muted">Chemicals, Microbiology Media, Laboratory & Scientific Supplies</span>
+        <span class="muted" data-i18n="footerTag">Chemicals, Microbiology Media, Laboratory & Scientific Supplies</span>
       </div>
-      <div class="muted">
-        © <span id="year"></span> All rights reserved.
-      </div>
+      <div class="muted">© <span id="year"></span> <span data-i18n="rights">All rights reserved.</span></div>
     </div>
   </footer>
 
@@ -317,6 +336,227 @@
           btn.setAttribute("aria-expanded", "false");
         }
       });
+    });
+
+    // =========================
+    // i18n (EN/AR) Translation
+    // =========================
+    const dict = {
+      en: {
+        companyProfile: "Company Profile",
+        requestQuote: "Request a Quote",
+        navAbout: "About",
+        navProducts: "Products",
+        navGallery: "Gallery",
+        navQuality: "Quality",
+        navVM: "Vision & Mission",
+        navContact: "Contact",
+
+        heroKicker: "Chemicals • Microbiology Media • Laboratory & Scientific Supplies",
+        heroTitle: "Trusted Laboratory Supplies for Analytical, Medical & Life Science Labs",
+        heroLead: "Gulf LabExpedia Co. (GLE) provides high-quality laboratory supplies from well-known brands — including chemicals, standards, microbiology media, reagents, and consumables — with responsive support.",
+        exploreProducts: "Explore Products",
+        viewCompanyProfile: "View Company Profile (PDF)",
+        badge1: "✔ Wide Range of Selections",
+        badge2: "✔ Responsive Support",
+        badge3: "✔ Customer Satisfaction Focus",
+
+        aboutTitle: "About Us",
+        aboutSub: "A comprehensive solution for laboratory supplies and chemicals — built on trust, quality, and support.",
+        whoTitle: "Who We Are",
+        whoText: "Gulf LabExpedia Co. (GLE) serves analytical and life science sectors with premium laboratory supplies from well-known brands. We supply chemicals and standards to a broad range of laboratories, and deliver consumables and reagents to medical laboratories. Our product portfolio is continuously expanding.",
+        commitTitle: "What We Commit To",
+        commit1: "Comprehensive solutions that meet and exceed client expectations.",
+        commit2: "High responsiveness, customer satisfaction, and superior support.",
+        commit3: "Reliable supply with wide selections for laboratory needs.",
+
+        productsTitle: "Our Products",
+        productsSub: "Quality laboratory supplies and solutions for various laboratory applications.",
+        p1Title: "Laboratory Chemicals & Reagents",
+        p1Text: "High-quality chemicals and reagents for reliable laboratory workflows.",
+        p2Title: "Standard Solutions",
+        p2Text: "Standards supporting accurate calibration and analytical requirements.",
+        p3Title: "Microbiology Media",
+        p3Text: "Microbiology media and complete solutions for diverse lab needs.",
+        p4Title: "General Analytical Consumables",
+        p4Text: "Essential consumables for analytical and routine laboratory operations.",
+        p5Title: "Tissue & Cell Culture",
+        p5Text: "Products for research and lab applications in tissue and cell culture.",
+        p6Title: "Filtration & Biomonitoring",
+        p6Text: "Filtration and biomonitoring products supporting lab quality and safety.",
+        p7Title: "Glassware & Plasticware",
+        p7Text: "Laboratory glassware, plasticware, and disposable materials.",
+        p8Title: "Safety & Basic Equipment",
+        p8Text: "Safety lab products and essential laboratory equipment.",
+
+        galleryTitle: "Gallery",
+        gallerySub: "A look into our laboratory environment and product focus.",
+
+        qualityTitle: "Quality & Support",
+        qualitySub: "We focus on service excellence — from sourcing to after-sales support.",
+        q1Title: "Trusted Brands",
+        q1Text: "We supply laboratory products from well-known brands in the industry.",
+        q2Title: "Responsive Service",
+        q2Text: "Fast response, consistent follow-up, and dependable communication.",
+        q3Title: "Customer Satisfaction",
+        q3Text: "We are committed to guaranteeing customer satisfaction.",
+        quoteText: "“GLE is committed to guaranteeing customer satisfaction.”",
+        quoteBy: "— Eng. Ammar Alghoul, Managing Director",
+
+        vmTitle: "Vision & Mission",
+        vmSub: "Guiding principles that shape how we serve our clients.",
+        visionTitle: "Vision",
+        visionText: "To be the preferred and trusted partner of choice to our clients by offering the best value in the most effective way.",
+        missionTitle: "Mission",
+        missionText: "To provide clients with the most compelling experience in handling their requirements and providing them with superior quality and wide range of selections.",
+
+        contactTitle: "Contact",
+        contactSub: "Let us know what you need — we’ll respond promptly.",
+        touchTitle: "Get in touch",
+        phoneLabel: "Phone:",
+        emailLabel: "Email:",
+        altEmailLabel: "Alt Email:",
+        addressTitle: "Address",
+        addressText: "Summit Center for Business Administration,<br>2nd Floor, Office 16, Al Aziziyah District,<br>Jeddah, KSA",
+
+        quickTitle: "Quick Request",
+        nameLabel: "Your Name",
+        emailFieldLabel: "Email",
+        msgLabel: "Message",
+        sendBtn: "Send",
+        formNote: "This form opens your email client to send the request.",
+        namePH: "Full name",
+        emailPH: "name@company.com",
+        msgPH: "Tell us what you need (products / quantities / delivery city)",
+
+        footerTag: "Chemicals, Microbiology Media, Laboratory & Scientific Supplies",
+        rights: "All rights reserved."
+      },
+
+      ar: {
+        companyProfile: "بروفايل الشركة",
+        requestQuote: "طلب عرض سعر",
+        navAbout: "من نحن",
+        navProducts: "المنتجات",
+        navGallery: "المعرض",
+        navQuality: "الجودة",
+        navVM: "الرؤية والرسالة",
+        navContact: "تواصل معنا",
+
+        heroKicker: "كيماويات • أوساط ميكروبيولوجية • مستلزمات مخبرية وعلمية",
+        heroTitle: "مستلزمات مختبرية موثوقة للمختبرات التحليلية والطبية وعلوم الحياة",
+        heroLead: "توفر شركة Gulf LabExpedia (GLE) مستلزمات مختبرية عالية الجودة من علامات معروفة — تشمل الكيماويات والمعايير والأوساط الميكروبيولوجية والكواشف والمواد الاستهلاكية — مع دعم سريع ومتجاوب.",
+        exploreProducts: "استعراض المنتجات",
+        viewCompanyProfile: "عرض بروفايل الشركة (PDF)",
+        badge1: "✔ تشكيلة واسعة",
+        badge2: "✔ دعم سريع ومتجاوب",
+        badge3: "✔ التركيز على رضا العميل",
+
+        aboutTitle: "من نحن",
+        aboutSub: "حل متكامل لمستلزمات المختبرات والكيماويات — مبني على الثقة والجودة والدعم.",
+        whoTitle: "من نحن",
+        whoText: "تخدم Gulf LabExpedia (GLE) قطاعات التحاليل وعلوم الحياة عبر توفير مستلزمات مختبرية عالية الجودة من علامات معروفة. نوفر الكيماويات والمعايير لمجموعة واسعة من المختبرات، ونقدم المستهلكات والكواشف للمختبرات الطبية. كما نعمل على توسعة محفظة منتجاتنا باستمرار.",
+        commitTitle: "التزامنا",
+        commit1: "حلول شاملة تلبي وتتجاوز توقعات العملاء.",
+        commit2: "استجابة عالية ورضا العملاء ودعم مميز.",
+        commit3: "توريد موثوق مع تشكيلة واسعة لاحتياجات المختبر.",
+
+        productsTitle: "المنتجات",
+        productsSub: "مستلزمات وحلول مختبرية عالية الجودة لمختلف التطبيقات.",
+        p1Title: "كيماويات وكواشف مخبرية",
+        p1Text: "كيماويات وكواشف عالية الجودة لنتائج موثوقة.",
+        p2Title: "محاليل ومعايير قياسية",
+        p2Text: "معايير تدعم دقة المعايرة والمتطلبات التحليلية.",
+        p3Title: "أوساط ميكروبيولوجية",
+        p3Text: "أوساط ميكروبيولوجية وحلول متكاملة لاحتياجات المختبر.",
+        p4Title: "مستهلكات تحليلية عامة",
+        p4Text: "مستهلكات أساسية للتحاليل والعمليات الروتينية.",
+        p5Title: "زراعة الأنسجة والخلايا",
+        p5Text: "منتجات للأبحاث والتطبيقات المختبرية في زراعة الخلايا.",
+        p6Title: "الترشيح والمراقبة الحيوية",
+        p6Text: "منتجات ترشيح ومراقبة تدعم الجودة والسلامة.",
+        p7Title: "زجاجيات وبلاستيكيات مخبرية",
+        p7Text: "زجاجيات وبلاستيكيات ومواد مخبرية للاستخدام الواحد.",
+        p8Title: "السلامة والمعدات الأساسية",
+        p8Text: "مستلزمات سلامة ومعدات مختبرية أساسية.",
+
+        galleryTitle: "المعرض",
+        gallerySub: "لمحة عن بيئة المختبر وتركيزنا على المنتجات.",
+
+        qualityTitle: "الجودة والدعم",
+        qualitySub: "نركز على تميز الخدمة — من التوريد إلى ما بعد البيع.",
+        q1Title: "علامات موثوقة",
+        q1Text: "نوفر منتجات مخبرية من علامات معروفة في المجال.",
+        q2Title: "خدمة متجاوبة",
+        q2Text: "استجابة سريعة ومتابعة مستمرة وتواصل موثوق.",
+        q3Title: "رضا العملاء",
+        q3Text: "ملتزمون بضمان رضا العملاء.",
+        quoteText: "“GLE ملتزمة بضمان رضا العملاء.”",
+        quoteBy: "— م. عمار الغول، المدير العام",
+
+        vmTitle: "الرؤية والرسالة",
+        vmSub: "مبادئ توجه طريقة خدمتنا لعملائنا.",
+        visionTitle: "الرؤية",
+        visionText: "أن نكون الشريك المفضل والموثوق لعملائنا عبر تقديم أفضل قيمة بأكثر الطرق فعالية.",
+        missionTitle: "الرسالة",
+        missionText: "تقديم تجربة مميزة للعملاء في تلبية احتياجاتهم وتوفير جودة عالية وتشكيلة واسعة من المنتجات.",
+
+        contactTitle: "تواصل معنا",
+        contactSub: "أخبرنا باحتياجك — وسنرد عليك بسرعة.",
+        touchTitle: "بيانات التواصل",
+        phoneLabel: "الهاتف:",
+        emailLabel: "البريد:",
+        altEmailLabel: "بريد بديل:",
+        addressTitle: "العنوان",
+        addressText: "مركز القمة لإدارة الأعمال،<br>الدور الثاني، مكتب 16، حي العزيزية،<br>جدة، المملكة العربية السعودية",
+
+        quickTitle: "طلب سريع",
+        nameLabel: "الاسم",
+        emailFieldLabel: "البريد الإلكتروني",
+        msgLabel: "الرسالة",
+        sendBtn: "إرسال",
+        formNote: "سيتم فتح برنامج البريد لإرسال الطلب.",
+        namePH: "الاسم الكامل",
+        emailPH: "name@company.com",
+        msgPH: "اكتب طلبك (المنتجات / الكميات / مدينة التسليم)",
+
+        footerTag: "كيماويات، أوساط ميكروبيولوجية، مستلزمات مخبرية وعلمية",
+        rights: "جميع الحقوق محفوظة."
+      }
+    };
+
+    function applyLang(lang) {
+      const isAr = lang === "ar";
+      document.documentElement.lang = isAr ? "ar" : "en";
+      document.documentElement.dir = isAr ? "rtl" : "ltr";
+
+      // text nodes
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[lang][key]) el.innerHTML = dict[lang][key];
+      });
+
+      // placeholders
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (dict[lang][key]) el.setAttribute("placeholder", dict[lang][key]);
+      });
+
+      // button label
+      const btn = document.getElementById("langBtn");
+      btn.textContent = isAr ? "EN" : "AR";
+
+      localStorage.setItem("siteLang", lang);
+    }
+
+    // init
+    const saved = localStorage.getItem("siteLang") || "en";
+    applyLang(saved);
+
+    // toggle
+    document.getElementById("langBtn").addEventListener("click", () => {
+      const current = document.documentElement.lang === "ar" ? "ar" : "en";
+      applyLang(current === "ar" ? "en" : "ar");
     });
   </script>
 </body>
